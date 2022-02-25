@@ -1,8 +1,4 @@
-using System.Globalization;
-using Telegram.Bot.Types;
-using TelegramUpdater;
 using TelegramUpdater.Hosting;
-using TelegramUpdater.RainbowUtlities;
 using TsWw3TelegramBot;
 using TsWw3TelegramBot.UpdateHandlers.Messages;
 
@@ -37,21 +33,10 @@ static void ServiceConfigurations(HostBuilderContext ctx, IServiceCollection ser
                 }, inherit: true)
 
             .AddMessageHandler<StartHandler>(),
-        PreProcess);
+        typeof(PreUpdateProcessor));
 
-    services.AddLocalization(options=>
+    services.AddLocalization(options =>
     {
         options.ResourcesPath = "Resources";
     });
-}
-
-/// <summary>
-/// A fumction to call before processing any update.
-/// </summary>
-static Task<bool> PreProcess(IUpdater updater, ShiningInfo<long, Update> shiningInfo)
-{
-    // Here we can set CurrentUICulture for every request.
-    CultureInfo.CurrentUICulture = new CultureInfo("fa-IR", false);
-
-    return Task.FromResult(true);
 }
