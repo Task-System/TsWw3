@@ -1,11 +1,18 @@
+using Microsoft.EntityFrameworkCore;
 using TelegramUpdater.Hosting;
 using TsWw3TelegramBot;
+using TsWw3TelegramBot.Databases;
 using TsWw3TelegramBot.UpdateHandlers.Messages;
 
 var host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((ctx, services) =>
     {
         var botConfigs = ctx.Configuration.GetSection("BotConfigs").Get<BotConfigs>();
+
+        services.AddDbContext<TsWw3Context>(options =>
+            options.UseSqlServer(ctx.Configuration.GetConnectionString("TsWw3Database")));
+
+        services.AddScoped<GenericRepositoryFactory>();
 
         services.AddTelegramUpdater<PollingUpdateWriter>(
             botConfigs.BotToken?? throw new Exception("BotToken cannot be null."),
