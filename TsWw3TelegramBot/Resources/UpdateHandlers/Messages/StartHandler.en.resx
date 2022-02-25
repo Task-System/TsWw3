@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Message" xml:space="preserve">
-    <value>Started from TsWw3 Telegram bot.</value>
+    <value>Started from TsWw3 Telegram bot.\n\nThis bot is under open source development, you can find the source here: https://github.com/Task-System/TsWw3</value>
   </data>
 </root>

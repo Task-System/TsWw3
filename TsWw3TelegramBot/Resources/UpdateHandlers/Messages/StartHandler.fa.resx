@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Message" xml:space="preserve">
-    <value>ربات TsWw 3 ( نسخه سوم از تسک سیسم ) استارت شد.</value>
+    <value>ربات TsWw 3 ( نسخه سوم از تسک سیسم ) استارت شد.\n\nاین ربات به صورت متن باز توسعه داده می شود، شما می توانید دخایر مربوط به این ربات را در لینک زیر مشاهده کنید:\nhttps://github.com/Task-System/TsWw3</value>
   </data>
 </root>
